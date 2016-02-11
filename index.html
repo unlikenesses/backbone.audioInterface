@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>backbone.js audio API interface</title>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="header">
+		<div class="controls">
+			<a href="#" id="addOsc">Add Oscillator</a>
+		</div>
+	</div>
+	<div class="canvas">
+		
+	</div>
+	<script id="oscTemplate" type="text/template">
+	    <div id="" class="node oscContainer">
+	    	<p class="name"><%= name %></p>
+	    	Frequency: <output for="frequency" class="frequencyOutput"><%= frequency %> HZ</output>
+	    	<input type="range" class="frequency" min="1" max="2000" step="1" value="500">
+	    	Detune: <output for="detune" class="detuneOutput"><%= detune %> cents</output>
+	    	<input type="range" class="detune" min="-1200" max="1200" step="1" value="0">
+	    	<select name="oscType" class="oscType">
+	    		<option value="sine">Sine</option>
+	    		<option value="square">Square</option>
+	    		<option value="sawtooth">Sawtooth</option>
+	    		<option value="triangle">Triangle</option>
+	    	</select>
+	    	<div class="toggleStart"><a href="#">Start</a></div>
+	    </div>
+	</script>
+	<script src="js/lib/jquery-1.11.3.min.js"></script>
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/backbone.js"></script>
+	<script src="js/models/osc.js"></script>
+    <script src="js/collections/oscs.js"></script>
+    <script src="js/views/osc.js"></script>
+    <script src="js/views/oscs.js"></script>
+    <script src="js/views/controls.js"></script>
+    <script src="js/app.js"></script>
+    <script>$(function(){app.boot();})</script>
+</body>
+</html>
